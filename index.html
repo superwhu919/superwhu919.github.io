@@ -55,31 +55,34 @@
   <section id="about">
     <h2>About</h2>
     <p>
-      I'm a Senior Applied Scientist at <strong>Amazon</strong>, on the Perfect
-      Order Experience science team. I work on <strong>large language
-      models</strong> — continued pretraining, instruction tuning, and the
-      evaluation and training infrastructure that makes them usable in
-      production.
+      I'm a Senior Applied Scientist at <strong>Amazon</strong>, on the POE-AI
+      team. I work on <strong>large language models</strong> across the full
+      training lifecycle: continued pretraining, instruction fine-tuning,
+      reinforcement learning, and evaluation. Most of that effort goes into a
+      domain-specific foundation model for seller-facing applications, from
+      the data recipes behind it to the systems that serve it in production.
     </p>
     <p>
-      Most of my recent work has gone into a domain-specific foundation model
-      for seller-facing applications: designing the training pipelines,
-      building data recipes for pretraining and fine-tuning mixtures, and
-      handling the multilingual and deployment problems that show up when a
-      model has to serve real traffic.
+      A large part of my work is <strong>distributed training at scale</strong>.
+      I build and operate training pipelines on SageMaker HyperPod clusters
+      orchestrated with Slurm and EKS, and I work across the range of
+      parallelism strategies these workloads call for: DDP for straightforward
+      data parallelism, ZeRO-1 and FSDP for sharding optimizer state and
+      parameters, and Megatron-style tensor and pipeline parallelism when a
+      model no longer fits on a single device.
     </p>
     <p>
       Alongside that, I collaborate on academic research in
-      <strong>robustness and evaluation</strong> — certified robustness at
-      scale, adversarial attacks on vision-language models, and benchmarks for
-      LLM-based judges. Before Amazon I was a deep learning engineer at the
-      <strong>Bosch Center for Artificial Intelligence</strong>. I hold an M.S.
-      from <strong>Carnegie Mellon</strong> and a B.S. from
+      <strong>robustness and evaluation</strong>, including certified
+      robustness at scale, adversarial attacks on vision-language models, and
+      benchmarks for LLM-based judges. Before Amazon I was a deep learning
+      engineer at the <strong>Bosch Center for Artificial Intelligence</strong>.
+      I hold an M.S. from <strong>Carnegie Mellon</strong> and a B.S. from
       <strong>Ohio State</strong>.
     </p>
     <p>
-      Happy to talk about LLM training, evaluation, or applied ML —
-      <a href="mailto:williamhu919@gmail.com">get in touch</a>.
+      Happy to talk about LLM training, distributed systems, or applied ML.
+      <a href="mailto:williamhu919@gmail.com">Get in touch</a>.
     </p>
   </section>
 
