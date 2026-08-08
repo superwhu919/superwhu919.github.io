@@ -1,0 +1,9 @@
+# Keep the resume out of the published repo — the site deliberately does not
+# link to it, but anything committed here is publicly readable on GitHub Pages.
+*.docx
+*.pdf
+
+# The full-size original photo; only the cropped assets/profile.jpg is needed.
+assets/me-original.JPG
+
+.DS_Store

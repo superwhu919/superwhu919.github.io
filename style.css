@@ -1,0 +1,394 @@
+/* ==========================================================================
+   William Hu — personal homepage
+   Single stylesheet, no dependencies.
+
+   The knobs you're most likely to want are the variables in :root below —
+   change the accent color, max width, or font there and everything follows.
+   ========================================================================== */
+
+:root {
+  --max-width: 46rem;          /* content column width (~736px) */
+  --accent:      #1a5fb4;      /* link color */
+  --accent-hover:#0d3d7a;
+
+  --text:        #1a1a1a;
+  --text-muted:  #5c5c5c;
+  --text-faint:  #8a8a8a;
+  --bg:          #ffffff;
+  --bg-subtle:   #f6f7f9;
+  --border:      #e3e5e8;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+               Arial, sans-serif;
+
+  --space:     1rem;
+  --radius:    6px;
+}
+
+/* Dark mode follows the visitor's OS setting. Delete this block if you
+   only ever want the light theme. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent:      #7cb0ee;
+    --accent-hover:#a9cbf5;
+
+    --text:        #e8e8e8;
+    --text-muted:  #a8a8a8;
+    --text-faint:  #7a7a7a;
+    --bg:          #16181c;
+    --bg-subtle:   #1e2126;
+    --border:      #2c3037;
+  }
+}
+
+/* --------------------------------------------------------------- base -- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 0 1.25rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover, a:focus-visible {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* Visible focus ring for keyboard users. */
+a:focus-visible, :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.muted  { color: var(--text-muted); }
+
+/* ----------------------------------------------------------- headings -- */
+
+h1 {
+  margin: 0 0 0.3rem;
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* Secondary name next to the display name, e.g. "William Hu (Haoqi Hu)". */
+.alt-name {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text-faint);
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+h2 {
+  margin: 3rem 0 1.15rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.02rem;
+  font-weight: 650;
+}
+
+/* ---------------------------------------------------------------- nav -- */
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.nav a {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Anchor links land below the top edge instead of flush against it. */
+section { scroll-margin-top: 1.5rem; }
+
+/* ------------------------------------------------------------- header -- */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2.5rem 0 1rem;
+}
+
+.avatar {
+  flex: none;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+}
+
+.header-text { min-width: 0; }
+
+.tagline {
+  margin: 0 0 0.15rem;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.meta {
+  margin: 0 0 0.9rem;
+  font-size: 0.92rem;
+  color: var(--text-faint);
+}
+
+/* Social links row */
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.social a {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+}
+.social a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------- news -- */
+
+.section-note {
+  margin-top: -0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.news-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+
+  /* Once the feed gets long it scrolls in place rather than pushing the
+     rest of the page down. Sized to show the current entries without
+     scrolling — lower it as you add more, or remove it to never scroll. */
+  max-height: 22rem;
+  overflow-y: auto;
+}
+
+.news-list li {
+  display: flex;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.news-list li:last-child { border-bottom: none; }
+
+.date {
+  flex: none;
+  width: 6.5rem;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.88rem;
+  padding-top: 0.08rem;
+}
+
+/* ----------------------------------------------------------- projects -- */
+
+.entry {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.entry:last-child { border-bottom: none; }
+
+.entry h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.entry-meta {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.entry p { margin: 0 0 0.4rem; }
+
+.links {
+  font-size: 0.88rem;
+  color: var(--text-faint);
+}
+
+/* ------------------------------------------------------- publications -- */
+
+.pubs {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.pubs li {
+  margin-bottom: 1.15rem;
+  padding-left: 0.25rem;
+  line-height: 1.5;
+}
+
+.pub-title { font-weight: 600; }
+
+.authors {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+}
+
+.venue {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Small pill for "Oral", "Best Paper", "Spotlight", etc. */
+.award {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: var(--radius);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  font-size: 0.75rem;
+  font-style: normal;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  vertical-align: 1px;
+}
+
+/* --------------------------------------- experience / education lists -- */
+
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline li {
+  display: flex;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.timeline li:last-child { border-bottom: none; }
+
+.timeline .date { width: 8.5rem; }
+
+.timeline .muted { font-size: 0.93rem; }
+
+/* ------------------------------------------------------------- footer -- */
+
+.footer {
+  max-width: var(--max-width);
+  margin: 4rem auto 0;
+  padding: 1.25rem 0 3rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+.footer p { margin: 0; }
+
+/* ------------------------------------------------------------- mobile -- */
+
+@media (max-width: 34rem) {
+  body { padding: 0 1rem; }
+
+  h1 { font-size: 1.65rem; }
+
+  /* Stack the header and center it. */
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+  }
+  .avatar { width: 130px; height: 130px; }
+  .social { justify-content: center; }
+
+  /* Dates move above their content instead of sitting in a side column. */
+  .news-list li,
+  .timeline li {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .date,
+  .timeline .date { width: auto; }
+
+  .news-list { max-height: none; }
+}
+
+/* -------------------------------------------------------------- print -- */
+
+@media print {
+  .nav, .skip-link { display: none; }
+  body { color: #000; background: #fff; font-size: 11pt; }
+  a { color: #000; text-decoration: underline; }
+  .news-list { max-height: none; overflow: visible; }
+  section { page-break-inside: avoid; }
+}
