@@ -301,6 +301,40 @@ section { scroll-margin-top: 1.5rem; }
 
 .pubs li:last-child { margin-bottom: 0; }
 
+/* ------------------------------------------------- collapsed overflow -- */
+
+/* <details> block holding publications beyond the first few. */
+.more { margin-top: 1.5rem; }
+
+.more summary {
+  display: inline-block;      /* replaces the default disclosure triangle */
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--accent);
+  list-style: none;
+  user-select: none;
+}
+.more summary::-webkit-details-marker { display: none; }
+.more summary:hover { color: var(--accent-hover); }
+
+/* Chevron that flips when the section opens. */
+.more summary::after {
+  content: "›";
+  display: inline-block;
+  margin-left: 0.35rem;
+  transform: rotate(90deg);
+  transition: transform 0.15s ease;
+}
+.more[open] summary::after { transform: rotate(-90deg); }
+
+/* Swap the label text based on open state. */
+.more-close { display: none; }
+.more[open] .more-open  { display: none; }
+.more[open] .more-close { display: inline; }
+
+/* Space between the toggle and the revealed entries. */
+.more[open] .pubs { margin-top: 1.5rem; }
+
 .pub-title { font-weight: 600; }
 
 .authors {
@@ -405,4 +439,8 @@ section { scroll-margin-top: 1.5rem; }
   a { color: #000; text-decoration: underline; }
   .news-list { max-height: none; overflow: visible; }
   section { page-break-inside: avoid; }
+
+  /* Print the collapsed publications too, and drop the toggle. */
+  .more > *:not(summary) { display: block !important; }
+  .more summary { display: none; }
 }
