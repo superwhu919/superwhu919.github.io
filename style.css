@@ -306,7 +306,7 @@ section { scroll-margin-top: 1.5rem; }
 /* ------------------------------------------------- collapsed overflow -- */
 
 /* <details> block holding publications beyond the first few. */
-.more { margin-top: 1.5rem; }
+.more { margin-top: 2.75rem; }
 
 /* Styled as a full-width button rather than a text link, so it reads as
    "there is more below" instead of being mistaken for the end of the list. */
@@ -319,7 +319,7 @@ section { scroll-margin-top: 1.5rem; }
   background: var(--accent-soft);
   text-align: center;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent);
   list-style: none;
   user-select: none;
