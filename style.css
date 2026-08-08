@@ -221,6 +221,10 @@ section { scroll-margin-top: 1.5rem; }
   color: var(--text-muted);
 }
 
+/* Currently unused — the News section was removed from index.html because it
+   duplicated Experience. Kept so the section can be restored by pasting back a
+   <section id="news"> with a <ul class="news-list">. Note that .date below is
+   still in use by .timeline, so don't delete that with it. */
 .news-list {
   margin: 0;
   padding: 0;
