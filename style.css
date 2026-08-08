@@ -306,16 +306,28 @@ section { scroll-margin-top: 1.5rem; }
 /* <details> block holding publications beyond the first few. */
 .more { margin-top: 1.5rem; }
 
+/* Styled as a full-width button rather than a text link, so it reads as
+   "there is more below" instead of being mistaken for the end of the list. */
 .more summary {
-  display: inline-block;      /* replaces the default disclosure triangle */
+  display: block;
   cursor: pointer;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-subtle);
+  text-align: center;
   font-size: 0.9rem;
+  font-weight: 500;
   color: var(--accent);
   list-style: none;
   user-select: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 .more summary::-webkit-details-marker { display: none; }
-.more summary:hover { color: var(--accent-hover); }
+.more summary:hover {
+  border-color: var(--accent);
+  color: var(--accent-hover);
+}
 
 /* Chevron that flips when the section opens. */
 .more summary::after {
