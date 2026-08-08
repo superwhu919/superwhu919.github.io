@@ -349,6 +349,12 @@ section { scroll-margin-top: 1.5rem; }
 
 .timeline .muted { font-size: 0.93rem; }
 
+/* Title progression under an employer, e.g. "Sr. Applied Scientist · AS II". */
+.roles {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
 /* ------------------------------------------------------------- footer -- */
 
 .footer {
