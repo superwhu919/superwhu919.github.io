@@ -257,7 +257,12 @@ section { scroll-margin-top: 1.5rem; }
   padding-top: 0.08rem;
 }
 
-/* ----------------------------------------------------------- projects -- */
+/* ------------------------------------ selected work / projects (unused) --
+
+   The Selected Work section was cut from index.html; the draft is parked in
+   drafts/selected-work.html. These rules are kept so pasting it back needs no
+   CSS changes. Note .links below is still in use by the publications list, so
+   don't remove that with the rest.                                         */
 
 .entry {
   padding: 1rem 0;
