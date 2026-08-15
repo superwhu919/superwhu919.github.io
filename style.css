@@ -16,7 +16,6 @@
   --text-faint:  #8a8a8a;
   --bg:          #ffffff;
   --bg-subtle:   #f6f7f9;
-  --accent-soft: #e9f1fc;      /* tinted fill for the expand button */
   --border:      #e3e5e8;
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
@@ -38,7 +37,6 @@
     --text-faint:  #7a7a7a;
     --bg:          #16181c;
     --bg-subtle:   #1e2126;
-    --accent-soft: #1b2b3d;
     --border:      #2c3037;
   }
 }
@@ -308,53 +306,6 @@ section { scroll-margin-top: 1.5rem; }
 
 .pubs li:last-child { margin-bottom: 0; }
 
-/* ------------------------------------------------- collapsed overflow -- */
-
-/* <details> block holding publications beyond the first few. */
-.more { margin-top: 2.75rem; }
-
-/* Styled as a full-width button rather than a text link, so it reads as
-   "there is more below" instead of being mistaken for the end of the list. */
-.more summary {
-  display: block;
-  cursor: pointer;
-  padding: 0.9rem 1rem;
-  border: 1.5px solid var(--accent);
-  border-radius: var(--radius);
-  background: var(--accent-soft);
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--accent);
-  list-style: none;
-  user-select: none;
-  transition: background 0.15s ease, box-shadow 0.15s ease;
-}
-.more summary::-webkit-details-marker { display: none; }
-.more summary:hover {
-  background: var(--bg-subtle);
-  box-shadow: 0 1px 6px rgb(0 0 0 / 0.08);
-}
-
-/* Chevron that flips when the section opens. */
-.more summary::after {
-  content: "›";
-  display: inline-block;
-  margin-left: 0.45rem;
-  font-size: 1.15rem;
-  transform: rotate(90deg);
-  transition: transform 0.15s ease;
-}
-.more[open] summary::after { transform: rotate(-90deg); }
-
-/* Swap the label text based on open state. */
-.more-close { display: none; }
-.more[open] .more-open  { display: none; }
-.more[open] .more-close { display: inline; }
-
-/* Space between the toggle and the revealed entries. */
-.more[open] .pubs { margin-top: 1.5rem; }
-
 .pub-title { font-weight: 600; }
 
 .authors {
@@ -459,8 +410,4 @@ section { scroll-margin-top: 1.5rem; }
   a { color: #000; text-decoration: underline; }
   .news-list { max-height: none; overflow: visible; }
   section { page-break-inside: avoid; }
-
-  /* Print the collapsed publications too, and drop the toggle. */
-  .more > *:not(summary) { display: block !important; }
-  .more summary { display: none; }
 }
