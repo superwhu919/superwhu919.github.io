@@ -3,8 +3,9 @@
 *.docx
 *.pdf
 
-# The full-size original photo; only the cropped assets/profile.jpg is needed.
+# Full-size photo originals; only the cropped assets/profile.jpg is published.
 assets/me-original.JPG
+assets/profile-original.png
 
 .DS_Store
 
