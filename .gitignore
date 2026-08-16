@@ -5,7 +5,7 @@
 
 # Full-size photo originals; only the cropped assets/profile.jpg is published.
 assets/me-original.JPG
-assets/profile-original.png
+assets/profile-original.*
 
 .DS_Store
 
